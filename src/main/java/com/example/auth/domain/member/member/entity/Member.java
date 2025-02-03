@@ -1,10 +1,12 @@
 package com.example.auth.domain.member.member.entity;
+
 import com.example.auth.global.entity.BaseTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
 @Getter
 @Setter

@@ -1,8 +1,11 @@
 package com.example.auth.domain.post.post.dto;
+
 import com.example.auth.domain.post.post.entity.Post;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+
 import java.time.LocalDateTime;
+
 @Getter
 public class PostDto {
     private long id;
@@ -14,6 +17,7 @@ public class PostDto {
     private String content;
     private long authorId;
     private String authorName;
+
     public PostDto(Post post) {
         this.id = post.getId();
         this.createdDate = post.getCreatedDate();
