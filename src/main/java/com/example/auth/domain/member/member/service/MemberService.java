@@ -16,12 +16,11 @@ public class MemberService {
 
     public Member join(String username, String password, String nickname) {
 
-       UUID uuid = UUID.randomUUID();
 
         Member member = Member.builder()
                 .username(username)
                 .password(password)
-                .password2(uuid.toString())
+                .apikey(username)
                 .nickname(nickname)
                 .build();
         return memberRepository.save(member);
@@ -37,5 +36,10 @@ public class MemberService {
 
     public Optional<Member> findById(long id) {
         return memberRepository.findById(id);
+    }
+
+    public Optional<Member> findByApikey(String apikey) {
+return  memberRepository.findByApikey(apikey);
+
     }
 }
