@@ -6,13 +6,15 @@ import com.example.auth.global.entity.BaseTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Setter
 @Builder
 public class Comment extends BaseTime {
 
@@ -23,4 +25,8 @@ public class Comment extends BaseTime {
     private Post post;
 
     private String content;
+
+    public void modify(String content) {
+        this.content = content;
+    }
 }
