@@ -5,9 +5,7 @@ import com.example.auth.domain.member.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -16,11 +14,10 @@ public class MemberService {
 
     public Member join(String username, String password, String nickname) {
 
-
         Member member = Member.builder()
                 .username(username)
                 .password(password)
-                .apikey(username)
+                .apiKey(username)
                 .nickname(nickname)
                 .build();
         return memberRepository.save(member);
@@ -38,8 +35,10 @@ public class MemberService {
         return memberRepository.findById(id);
     }
 
-    public Optional<Member> findByApikey(String apikey) {
-return  memberRepository.findByApikey(apikey);
+    public Optional<Member> findByApiKey(String apikey) {
+return  memberRepository.findByApiKey(apikey);
 
     }
+
+
 }
